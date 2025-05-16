@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+</head>
+<body>
+    {% include "header.html" %}
+    <div>
+        <form action="/login" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Войти">
+        </form>
+        <p style="color: red;">{{ error }}</p>
+        <h3>Ещё не зарегистрированы? <a href="/signup">Зарегистрироваться</a></h3>
+    </div>
+</body>
+</html>

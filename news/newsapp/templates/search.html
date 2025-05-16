@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+</head>
+<body>
+    {% include "header.html" %}
+    <div>
+        <form action="/search" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Искать">
+        </form>
+        <ul>
+            {% for n in results %}
+                <li>
+                    <h2>{{ n.title }}</h2>
+                    <small>{{ n.created_at }}</small>
+                    <p>{{ n.content }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

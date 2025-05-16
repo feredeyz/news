@@ -1,0 +1,15 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+<header>
+    <img src="" alt="logo">
+    <a href="/">Последние новости</a>
+    <a href="/search">Поиск</a>
+    <a href="/add">Создать</a>
+    {% if request.session.username %}
+        <a href="/logout">Выйти</a>
+    {% else %}
+        <a href="/login">Войти</a>
+    {% endif %}
+</header>

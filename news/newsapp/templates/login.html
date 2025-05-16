@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
     {% include "header.html" %}
-    <div>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Войти">
-        </form>
-        <p style="color: red;">{{ error }}</p>
-        <h3>Ещё не зарегистрированы? <a href="/signup">Зарегистрироваться</a></h3>
+    <div id="main">
+        <div id="login">
+            <form action="/login" method="post">
+                <h1>Вход</h1>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Войти">
+                <h3 id="message">Ещё не зарегистрированы?<br><a href="/signup">Зарегистрироваться</a></h3>
+                <p id="error">{{ error }}</p>
+            </form>
+        </div>
     </div>
 </body>
 </html>

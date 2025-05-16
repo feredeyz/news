@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости</title>
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
 </head>
 <body>
     {% include "header.html" %}
@@ -11,11 +13,19 @@
         <form action="/add" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Опубликовать">
+            <input type="submit" id="submit" value="Опубликовать">
         </form>
         <p id="error">
             {{ error }}
         </p>
     </div>
+    <script>
+        const area = document.querySelector('#content');
+        area.addEventListener('input', () => {
+            if (area.scrollHeight > 240) {
+                area.style.height = `${area.scrollHeight}px`;
+            }
+        })
+    </script>
 </body>
 </html>

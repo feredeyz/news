@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #916dd5;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+}
+
+form #title {
+    background-color: #7151a9;
+    border: 0;
+    border-radius: 3px;
+    font-size: 1.05rem;
+    width: 70%;
+    height: 45px;
+    padding: 0 10px;
+}
+
+#title:hover, #title:focus, #content:hover, #content:focus, #submit:hover {
+    filter: brightness(0.95);
+}
+
+form #content {
+    background-color: #7151a9;
+    border: 0;
+    border-radius: 3px;
+    font-size: 1.05rem;
+    width: 95%;
+    height: 250px;
+    margin-top: 5px;
+    padding: 10px;
+    resize: none;
+}
+
+form #submit {
+    margin-top: 5px;
+    background-color: #7151a9;
+    border: 0;
+    border-radius: 3px;
+    font-size: 1.05rem;
+    padding: 2px 10px;
+}

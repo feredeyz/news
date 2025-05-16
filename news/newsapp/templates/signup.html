@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Новости</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
     {% include "header.html" %}
     <div>
-        <form action="/signup" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Зарегистрироваться">
-        </form>
-        <p>
-            {{ error }}
-        </p>
-        <h3>Уже есть аккаунт? <a href="/login">Войти</a></h3>
+        <div id="signup">
+            <form action="/signup" method="post">
+                <h1>Регистрация</h1>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Зарегистрироваться">
+                <h3 id="message">Уже есть аккаунт? <a href="/login">Войти</a></h3>
+                <p id="error">{{ error }}</p>
+            </form>
+        </div>
     </div>
 </body>
 </html>
